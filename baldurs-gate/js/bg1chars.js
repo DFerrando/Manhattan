@@ -39,7 +39,7 @@ function gridLoad() {
 			string += '<td class="clickable"><img src="images/' + characters[i].name + '.png" id="header"><br />' + characters[i].name + '</td>'
 			colCount++
 		} else {
-			string += '</tr><tr><td><img src="images/' + characters[i].name + '.png" id="header"><br />' + characters[i].name + '</td>'
+			string += '</tr><tr><td class="clickable"><img src="images/' + characters[i].name + '.png" id="header"><br />' + characters[i].name + '</td>'
 			colCount = 0			
 			banCol = true
 		}
