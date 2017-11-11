@@ -20,21 +20,22 @@ function gridLoad() {
 	var imoen = new character ('Imoen','','','','','','','')
 
 	var characters = new Array()
-	characters.push(minsc)
-	characters.push(jaheira)
-	characters.push(khalid)
-	characters.push(xzar)
-	characters.push(montaron)
-	characters.push(edwin)
-	characters.push(branwen)
-	characters.push(imoen)
+	characters.push(minsc);
+	characters.push(jaheira);
+	characters.push(khalid);
+	characters.push(xzar);
+	characters.push(montaron);
+	characters.push(edwin);
+	characters.push(branwen);
+	characters.push(imoen);
 
-	var colCount = 0
-	var banCol = false
-	var tableHeader = document.getElementById('tableHeader')
-	var tableBody = document.getElementById('tableBody')
-	var string = '<tr>'
-	for (i = 0; i < characters.length; i++) {		
+	var colCount = 0;
+	var banCol = false;
+	var tableHeader = document.getElementById('tableHeader');
+	var tableBody = document.getElementById('tableBody');
+	var string = '<tr>';
+	for (i = 0; i < characters.length; i++) {
+		characters[i].addEventListener("click",charBio)
 		if (colCount < 4) {
 			string += '<td><img src="images/' + characters[i].name + '.png" id="header"><br />' + characters[i].name + '</td>'
 			colCount++
@@ -43,14 +44,55 @@ function gridLoad() {
 			colCount = 0			
 			banCol = true
 		}
-	}
-	string += '</tr>'
-	tableBody.innerHTML += string
+	};
+	string += '</tr>';
+	tableBody.innerHTML += string;
 	if (!banCol){		
 		tableHeader.colSpan = colCount
 	} else {
 		tableHeader.colSpan = '4'
-	}
+	};
+};
+
+window.onload = gridLoad;
+
+// Get the modal
+var modal = document.getElementById('myModal');
+
+// Get the <span> element that closes the modal
+var span = document.getElementsByClassName("close")[0];
+
+// When the user clicks the button, open the modal 
+function charBio(index) {
+	var portrait = document.getElementById("portrait")	
+	var name = document.getElementById("name")
+	var str = document.getElementById("str")
+	var dex = document.getElementById("dex")
+	var con = document.getElementById("con")
+	var int = document.getElementById("int")
+	var wis = document.getElementById("wis")
+	var cha = document.getElementById("cha")
+	var bio = document.getElementById("bio")
+	portrait.src = 'images/'+ characters[index].name + '.png'
+	name.innerHTML = characters[index].name
+	str.innerHTML = characters[index].strength
+	dex.innerHTML = characters[index].dexterity
+	con.innerHTML = characters[index].constitution
+	int.innerHTML = characters[index].intelligence
+	wis.innerHTML = characters[index].wisdom
+	cha.innerHTML = characters[index].charisma
+	bio.innerHTML = characters[index].biography
+    modal.style.display = "block";
 }
 
-window.onload = gridLoad
+// When the user clicks on <span> (x), close the modal
+span.onclick = function() {
+    modal.style.display = "none";
+}
+
+// When the user clicks anywhere outside of the modal, close it
+window.onclick = function(event) {
+    if (event.target == modal) {
+        modal.style.display = "none";
+    }
+}
