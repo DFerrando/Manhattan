@@ -1,20 +1,65 @@
 <!DOCTYPE html>
 <html>
-  <head>
-    <link rel="stylesheet" type="text/css" href="css/default.css">
-    <link rel="stylesheet" type="text/css" href="css/modal.css">    
-    <script type="text/javascript" src="js/bg1chars.js"></script>
-    <title>Baldur's Gate Characters</title>
-  </head>
-  <table>
-  	<thead>
-  		<th id="tableHeader">Baldur's Gate Characters</th>
-  	</thead>
-  	<tbody id="tableBody">
-  		
-  	</tbody>
-  </table>
-  <body>
-  	
-  </body>
+<head>
+  <link rel="stylesheet" type="text/css" href="css/default.css">
+  <link rel="stylesheet" type="text/css" href="css/modal.css">    
+  <script type="text/javascript" src="js/bg1chars.js"></script>
+  <title>Baldur's Gate Characters</title>
+</head>
+<table>
+ <thead>
+  <th id="tableHeader">Baldur's Gate Characters</th>
+</thead>
+<tbody id="tableBody">
+
+</tbody>
+</table>
+<body>
+ <!-- The Modal -->
+ <div id="myModal" class="modal">
+
+  <!-- Modal content -->
+  <div class="modal-content">
+    <span class="close">&times;</span>
+    <h1></h1>
+    <table>
+      <tr>
+        <td><img id="portrait"></td>
+        <td>
+          <table>
+            <tr>
+              <td>Strength</td>
+              <td id="str"></td>
+            </tr>
+            <tr>
+              <td>Dexterity</td>
+              <td id="dex"></td>
+            </tr>
+            <tr>
+              <td>Constitution</td>
+              <td id="con"></td>
+            </tr>
+            <tr>
+              <td>Intelligence</td>
+              <td id="int"></td>
+            </tr>
+            <tr>
+              <td>Wisdom</td>
+              <td id="wis"></td>
+            </tr>
+            <tr>
+              <td>Charisma</td>
+              <td id="cha"></td>
+            </tr>
+          </table>
+        </td>
+      </tr>      
+    </table>
+    <h2>Biography</h2>
+    <p id="bio"></p>
+  </div>
+
+</div>
+
+</body>
 </html>
