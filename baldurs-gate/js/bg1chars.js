@@ -37,14 +37,8 @@ function gridLoad() {
 			string += '<td><img src="images/' + characters[i].name + '.png" id="header"><br />' + characters[i].name + '</td>'
 			colCount++
 		} else {
-<<<<<<< HEAD
-			string += '</tr><tr><td><img src="images/' + characters[i].name + '.png" id="header"><br />' + characters[i].name + '</td></tr>'
-			colCount = 1			
-			tableHeader.setAttribute('colSpan','4')
-=======
 			string += '</tr><tr><td><img src="images/' + characters[i].name + '.png" id="header"><br />' + characters[i].name + '</td>'
 			colCount = 0			
->>>>>>> 1805dd33c3feae9346a48e649ec4bb8f68530a62
 			banCol = true
 		}
 	}
