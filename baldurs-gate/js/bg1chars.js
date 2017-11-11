@@ -29,7 +29,7 @@ function gridLoad() {
 		} else {
 			string += '</tr><tr><td><img src="images/' + characters[i].name + '.png" id="header"><br />' + characters[i].name + '</td></tr>'
 			colCount = 1			
-			tableHeader.setAttribute('colspan','4')
+			tableHeader.setAttribute('colSpan','4')
 			banCol = true
 		}
 	}
